@@ -142,6 +142,7 @@ onMounted(() => {
         <div class="amount">{{ stats.balance.toFixed(2) }}</div>
         <div class="meta">{{ stats.month }}/{{ stats.year }}</div>
       </div>
+      <!-- Flattened structure for CSS Grid/Flex control -->
       <div class="card income-card">
         <h3>Income</h3>
         <div class="amount">+{{ stats.income.toFixed(2) }}</div>
@@ -271,13 +272,6 @@ h3 {
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.stats-cards {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
 .amount {
   font-size: 32px;
   font-weight: 600;
@@ -294,12 +288,6 @@ h3 {
 
 .income-card .amount { color: #34c759; }
 .expense-card .amount { color: #ff3b30; }
-
-.main-content {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 20px;
-}
 
 .form-group {
   margin-bottom: 20px;
@@ -386,8 +374,8 @@ input:focus {
 }
 
 .transaction-list {
-  max-height: 400px;
-  overflow-y: auto;
+  /* max-height: 400px; removed to allow full height */
+  /* overflow-y: auto; removed */
 }
 
 .transaction-item {

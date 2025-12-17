@@ -17,8 +17,18 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
+
+def home(request):
+    return JsonResponse({
+        "status": "running",
+        "message": "ClashFlow Backend is active",
+        "documentation_url": "/admin/",
+        "api_base_url": "/api/finance/"
+    })
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/finance/", include("finance.urls")),
+    path("", home),
 ]

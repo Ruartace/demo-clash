@@ -9,7 +9,7 @@ class Expense(models.Model):
     note = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'expense'
     
     def __str__(self):
@@ -23,7 +23,7 @@ class Income(models.Model):
     note = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'income'
 
     def __str__(self):
